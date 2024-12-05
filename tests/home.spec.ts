@@ -15,4 +15,7 @@ test("Home page", async ({ page }) => {
   expect( await productGrid.getByRole("link").count()).toBe(9);
 
   // Search for Thor Hammer and check the result
+  await page.getByTestId("search-query").fill("Thor Hammer");
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("link", { name: "Thor Hammer" })).toBeVisible();
 })

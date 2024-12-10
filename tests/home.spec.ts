@@ -35,8 +35,8 @@ test.describe("Home page customer 01 auth", () => {
     await page.goto("https://practicesoftwaretesting.com/");
   });
 
-  test("check customer 01 is signed in", async ({ page }) => {
+  test("Check customer 01 is signed in", async ({ page }) => {
     await expect(page.getByTestId("nav-sign-in")).not.toBeVisible();
-    await expect(page.getByTestId("nav-menu")).toContainText("Jane Doe");
+    await expect(page.getByTestId("nav-menu")).toContainText("Jack Howe");
   });
 });
